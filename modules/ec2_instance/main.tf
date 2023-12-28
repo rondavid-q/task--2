@@ -28,7 +28,7 @@ resource "aws_instance" "my_instance" {
   vpc_security_group_ids = var.vpc_security_group_ids
 
   tags = {
-    Name = "task-2"
+    Name = "MyInstance"
   }
 }
 

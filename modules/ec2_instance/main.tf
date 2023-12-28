@@ -32,10 +32,14 @@ resource "aws_instance" "my_instance" {
   }
 }
 
+data "aws_network_interfaces" "my_instance_nics" {
+  instance_id = aws_instance.my_instance.id
+}
+
 output "instance_id" {
   value = aws_instance.my_instance.id
 }
 
 output "allocation_id" {
-  value = aws_instance.my_instance.network_interface_ids[0]
+  value = data.aws_network_interfaces.my_instance_nics.ids[0]
 }

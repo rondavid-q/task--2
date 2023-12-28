@@ -36,3 +36,12 @@ output "nat_gateway_id" {
 output "instance_id" {
   value = module.ec2_instance.instance_id
 }
+
+
+output "ec2_instance_id" {
+  value = module.ec2_instance.instance_id
+}
+
+output "ec2_instance_allocation_id" {
+  value = module.ec2_instance.allocation_id
+}

@@ -1,7 +1,7 @@
 # main.tf
 
 provider "aws" {
-  region = "ap-south-1" 
+  region = "ap-south-1"  
 }
 
 module "vpc" {

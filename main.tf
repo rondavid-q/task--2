@@ -38,4 +38,7 @@ module "ec2_instance" {
   source      = "./modules/ec2_instance"
   subnet_id   = module.subnet.private_subnet_id
   sg_id       = module.security_group.sg_id
+  ami_id          = var.ami_id
+  instance_type   = var.instance_type
+  key_pair_name   = var.key_pair_name
 }

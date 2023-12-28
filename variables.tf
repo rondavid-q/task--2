@@ -34,5 +34,5 @@ variable "instance_type" {
 variable "key_pair_name" {
   description = "Name of the key pair for the EC2 instance"
   type        = string
-  default     = "task-2"  # Specify your key pair name
+  default     = "task-2"  
 }

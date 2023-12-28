@@ -1,10 +1,11 @@
+# modules/ec2_instance/main.tf
 
 variable "subnet_id" {
   type = string
 }
 
-variable "sg_id" {
-  type = string
+variable "vpc_security_group_ids" {
+  type = list(string)
 }
 
 variable "ami_id" {
@@ -24,10 +25,10 @@ resource "aws_instance" "my_instance" {
   instance_type   = var.instance_type
   subnet_id       = var.subnet_id
   key_name        = var.key_pair_name
-  security_group  = [var.sg_id]
+  vpc_security_group_ids = var.vpc_security_group_ids
 
   tags = {
-    Name = "task-2-instance"
+    Name = "task-2"
   }
 }
 

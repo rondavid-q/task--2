@@ -1,3 +1,5 @@
+# modules/nat_gateway/main.tf
+
 variable "subnet_id" {
   type = string
 }

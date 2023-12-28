@@ -8,8 +8,12 @@ variable "igw_id" {
   type = string
 }
 
+variable "ec2_instance_allocation_id" {
+  type = string
+}
+
 resource "aws_nat_gateway" "my_nat_gateway" {
-  allocation_id = aws_instance.my_instance.network_interface_ids[0]
+  allocation_id = var.ec2_instance_allocation_id
   subnet_id     = var.subnet_id
 }
 

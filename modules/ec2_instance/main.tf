@@ -41,5 +41,5 @@ output "instance_id" {
 }
 
 output "allocation_id" {
-  value = data.aws_instance.my_instance_data.network_interfaces[0].allocation_id
+  value = data.aws_instance.my_instance_data.network_interface_ids[0]
 }

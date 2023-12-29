@@ -31,4 +31,6 @@ Once everything is done, destroy the cerated resources using terraform destroy
 
 2. This folder also has Jenkinsfile, which can be used with jenkins to automate the entire process along with the choice to give your own set of variables.
 
+Jenkins will wait for your apporval to proceed forward once te plan is done.
+
 The jenkins file also has the flexibility to create and destroy resources.

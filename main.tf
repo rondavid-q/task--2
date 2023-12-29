@@ -9,8 +9,10 @@ module "vpc" {
 }
 
 module "subnet" {
-  source = "./modules/subnet"
-  vpc_id = module.vpc.vpc_id
+  source                   = "./modules/subnet"
+  vpc_id                   = module.vpc.my_vpc.id
+  public_subnet_cidr_block = "10.0.1.0/24"
+  private_subnet_cidr_block = "10.0.2.0/24"
 }
 
 module "internet_gateway" {
@@ -20,6 +22,7 @@ module "internet_gateway" {
 
 module "security_group" {
   source = "./modules/security_group"
+  vpc_id = module.vpc.my_vpc.id
 }
 
 module "route_table" {
@@ -37,8 +40,9 @@ module "nat_gateway" {
 
 module "ec2_instance" {
   source          = "./modules/ec2_instance"
-  subnet_id       = module.subnet.private_subnet_id
-  vpc_security_group_ids = [module.security_group.sg_id]
+  public_subnet_id = module.subnet.public_subnet.id
+  private_subnet_id = module.subnet.private_subnet.id
+  vpc_security_group_ids = [module.security_group.my_security_group.id]
   ami_id          = var.ami_id
   instance_type   = var.instance_type
   key_pair_name   = var.key_pair_name

@@ -2,6 +2,8 @@
 
 This Terraform script provisions an AWS VPC with public and private subnets. It includes the creation of an Internet Gateway for public subnet access and a NAT Gateway for private subnet internet access.
 
+We have also created ECR repo to ush our images.
+
 ## Prerequisites
 
 Before running this Terraform script, make sure you have the following prerequisites:

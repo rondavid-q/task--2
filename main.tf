@@ -132,3 +132,10 @@ resource "aws_route_table_association" "private_association2" {
   subnet_id      = aws_subnet.private2_subnet.id
   route_table_id = aws_route_table.private.id
 }
+
+#Creation of ECR to push images
+resource "aws_ecr_repository" "my_repository" {
+  name = "node-service"
+  image_tag_mutability = "MUTABLE" 
+  scan_on_push         = true       
+}

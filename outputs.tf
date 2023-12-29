@@ -22,3 +22,7 @@ output "public2_subnet_id" {
   description = "IDs of the public subnet2"
   value = aws_subnet.public2_subnet.id
 }
+
+output "repository_url" {
+  value = aws_ecr_repository.my_repository.repository_url
+}

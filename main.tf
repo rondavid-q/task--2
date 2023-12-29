@@ -39,7 +39,7 @@ module "nat_gateway" {
 
 module "ec2_instance" {
   source                 = "./modules/ec2_instance"
-  subnet_ids             = [module.subnet.public_subnet.id, module.subnet.private_subnet.id]
+  subnet_id             = [module.subnet.public_subnet.id, module.subnet.private_subnet.id]
   vpc_security_group_ids = [module.security_group.my_security_group.id]
   ami_id                = var.ami_id
   instance_type         = var.instance_type

@@ -22,7 +22,6 @@ module "internet_gateway" {
 
 module "security_group" {
   source = "./modules/security_group"
-  vpc_id = module.vpc.my_vpc.id
 }
 
 module "route_table" {

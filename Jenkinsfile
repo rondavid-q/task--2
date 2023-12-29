@@ -3,13 +3,13 @@ pipeline {
     
     parameters {
         choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'Select Action')
-        string(name: 'VPC_NAME', defaultValue: 'idz-tf-test', description: 'Enter VPC name')
+        string(name: 'VPC_NAME', defaultValue: 'task-tf-test', description: 'Enter VPC name')
         string(name: 'VPC_CIDR', defaultValue: '10.0.0.0/16', description: 'Enter VPC CIDR range')
         string(name: 'PRIVATE1_SUBNET_CIDR', defaultValue: '10.0.1.0/24', description: 'Enter CIDR range for private subnet1')
         string(name: 'PRIVATE2_SUBNET_CIDR', defaultValue: '10.0.2.0/24', description: 'Enter CIDR range for private subnet2')
         string(name: 'PUBLIC1_SUBNET_CIDR', defaultValue: '10.0.3.0/24', description: 'Enter CIDR range for public subnet1')
         string(name: 'PUBLIC2_SUBNET_CIDR', defaultValue: '10.0.4.0/24', description: 'Enter CIDR range for public subnet2')
-        string(name: 'PROJECT_NAME_ENV', defaultValue: 'idz-dev', description: 'Enter the env with project name')
+        string(name: 'PROJECT_NAME_ENV', defaultValue: 'task-dev', description: 'Enter the env with project name')
         
     }
     

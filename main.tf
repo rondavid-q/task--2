@@ -136,6 +136,5 @@ resource "aws_route_table_association" "private_association2" {
 #Creation of ECR to push images
 resource "aws_ecr_repository" "my_repository" {
   name = "node-service-1"
-  image_tag_mutability = "MUTABLE" 
-  scan_on_push         = true       
+  image_tag_mutability = "MUTABLE"    
 }

@@ -13,9 +13,9 @@ resource "local_file" "private_key" {
   filename = var.key_name
 }
 */
-data "aws_s3_bucket" "pvt_key" {
+/* data "aws_s3_bucket" "pvt_key" {
   bucket = "users-key-tf"
-}
+} */
 
 resource "aws_s3_bucket_object" "instance_key" {
   bucket = data.aws_s3_bucket.pvt_key.bucket
